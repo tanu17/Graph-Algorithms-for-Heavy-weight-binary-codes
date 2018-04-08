@@ -1,8 +1,11 @@
 # Heuristic Construction of Heavy Weight Binary Codes
-The following contains algorithm for finding heavy weight binary code for a given hammig distance
 
-A constant weight binary code is a set of binary vectors of length n, with weight at least w and minimum Hamming distance d. We refer to the maximum possible number of codewords in a heavy weight code as H(n, d, w). 
+A constant weight binary code is a set of binary vectors of length n, with weight at least w and minimum Hamming distance d. We refer to the maximum possible number of codewords  in a heavy weight code as H(n, d, w). 
+
+Heavy weight codes have applications in asynchronous communication problems and codes from simultaneous transfer of energy and information.
+
 In this project, we study and experiment with many local search heuristic and determine their effectiveness as the novel methods for finding heavy weight codes with the maximum number of codewords. 
+
 The algorithms studied were- 
 	Greedy Algorithm
 	Hill Climbing Algorithm
@@ -45,13 +48,15 @@ For lexicographic order, the results obtained were not satisfactory as expected,
 For random search, the results obtained were better than lexicographic order but still far from the ideal result required. The random search tends to get stuck in local optima and the result obtained from one trial can vary from the other trial with the same initial conditions of n,d,w.
 Example: After several trial the best lower bound obtained from greedy search was 22 for H(10,4,5) which was proved later on in the research to be 37.
 
-	Hill Climbing Algorithm:
+
+Hill Climbing Algorithm:
 
 Description-
 Greedy algorithm works on the principle of brute force by checking each solution. In this case, if the codeword selected for checking is found to be feasible, it is added to the code. There are two types of greedy search algorithm used- random search and lexicographic search. In lexicographic search, the exploration order is in the alphabetic/numerical order which can in turn be ascending or descending. In random search, there is no exploration order and the probability of codeword being selected is equal for all codewords.
  
 
 Pseudo Code-
+
 	Let length of codeword be n, weight be w, hamming distance d 
 	H (n,w)={ x ε F2 : weight(x)>=w and |x|=n}
 	X= Φ 
@@ -71,7 +76,8 @@ Result-
 The algorithm had been successful in finding optimal heavy weight codes. Due to removal of existing codeword from the code (with some probability), the code is prevented from getting bound in local optima and ultimately achieving global optima.
 Example: The algorithm was able to find many codes with code size equal to upper bound- H(10,4,5), H(10,4,5), H(10,9,5), H(11,3,5) etc.
 
-	Simulated Annealing Algorithm:
+
+Simulated Annealing Algorithm:
 
 Description-
 Simulated annealing derives a virtual analogy between the process of annealing which is cooling and heating of metal to make it stronger. Similarly, this algorithm uses temperature as a control parameter. Trapping into local optima is avoided by selection of a bad codeword with a probability of e-ΔE/T , which depends on the control parameter T.
@@ -98,7 +104,7 @@ Result-
 The implementation of algorithm proved to be unsuccessful. Even using better energy function resulted in negative results.
 
 
-	Tabu Search:
+Tabu Search:
 
 Description-
 Tabu Search avoids the trap of local optima by using memory. A list is maintained throughout the execution which contains the taboo codes and are not added to the final solution. The algorithm is an iterative one, it starts with code size 1 for particular n,d,w and keeps on increasing the code size until the optimal code is found out. 
@@ -127,13 +133,8 @@ But implementation for heavy weight code proved to be unsuccessful as all experi
 
 
 
-
-
-
 The lower bounds obtained throughout the research are available on –
 
 https://drive.google.com/drive/folders/0Bw2pvIn5EcFDQllKUk43cGZQVFE?usp=sharing
 
 Several of the lower bounds obtained match the actual upper bounds for the respective codes and hence resulted in calculating the exact value of the heavy weight code. 
-
-
