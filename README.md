@@ -10,32 +10,34 @@ The algorithms studied were-
 	Tabu Search
 Alongside the study for optimizing the search of Heavy Weight binary codes, we got glimpse upon related problems such as Genetic Algorithm, t-Covering Design Problem and for finding constant weight binary codes which helped us in understanding the original problem in depth.
 
-	Greedy Algorithm:
+
+Greedy Algorithm:
 
 Description-
 Greedy algorithm works on the principle of brute force by checking each solution. In this case, if the codeword selected for checking is found to be feasible, it is added to the code. There are two types of greedy search algorithm used- random search and lexicographic search. In lexicographic search, the exploration order is in the alphabetic/numerical order which can in turn be ascending or descending. In random search, there is no exploration order and the probability of codeword being selected is equal for all codewords.
  
 
 Pseudo Code-
+	
 	Lexicographic:
 
-Let length of codeword be n, weight be w, hamming distance d 
-H (n,w)={ x ε F2 : weight(x)>=w and |x|=n}
-C = Φ 
-While |C |<M or some terminating condition:
-	1.Pick x ε H (n,w) in order
-	2.If hamming distance between x and y >=d for all y ε C
-		Add x to C
+	Let length of codeword be n, weight be w, hamming distance d 
+	H (n,w)={ x ε F2 : weight(x)>=w and |x|=n}
+	C = Φ 
+	While |C |<M or some terminating condition:
+		1.Pick x ε H (n,w) in order
+		2.If hamming distance between x and y >=d for all y ε C
+			Add x to C
 
 	Random:
 
-Let length of codeword be n, weight be w, hamming distance d 
-H (n,w)={ x ε F2 : weight(x)>=w and |x|=n}
-C = Φ 
-While |C |<M or some terminating condition:
-	1.Randomly pick x ε H (n,w) in order
-	2.If hamming distance between x and y >=d for all y ε C
-		Add x to C
+	Let length of codeword be n, weight be w, hamming distance d 
+	H (n,w)={ x ε F2 : weight(x)>=w and |x|=n}
+	C = Φ 
+	While |C |<M or some terminating condition:
+		1.Randomly pick x ε H (n,w) in order
+		2.If hamming distance between x and y >=d for all y ε C
+			Add x to C
 
 
 Result-
@@ -50,19 +52,20 @@ Greedy algorithm works on the principle of brute force by checking each solution
  
 
 Pseudo Code-
-Let length of codeword be n, weight be w, hamming distance d 
-H (n,w)={ x ε F2 : weight(x)>=w and |x|=n}
-X= Φ 
-While |C |<M or some terminating condition:      	  
-								 
-	Neighbourhood of X is defined as:
+	Let length of codeword be n, weight be w, hamming distance d 
+	H (n,w)={ x ε F2 : weight(x)>=w and |x|=n}
+	X= Φ 
+	While |C |<M or some terminating condition:      	  
 
-             |      X υ {x}     where x doesn’t belong to X 
- N    (X)=|	      X\{y}  υ {x}      remove y with some probability or   |                           when certain conditions are satisfied
-                   |                            where y ε X , x ε H (n,w) and     
-                   |                                            x doesn’t belong to X
-	x is randomly generated from H (n,w)
-	X <- N    (X)
+	   Neighbourhood of X is defined as:
+
+	      |      X υ {x}     where x doesn’t belong to X 
+	 N(X)=|	     X\{y}  υ {x}      remove y with some probability or   
+	      |                       when certain conditions are satisfied
+	      |                       where y ε X , x ε H (n,w) and     
+	      |                                         x doesn’t belong to X
+		x is randomly generated from H (n,w)
+		X <- N    (X)
 
 Result-
 The algorithm had been successful in finding optimal heavy weight codes. Due to removal of existing codeword from the code (with some probability), the code is prevented from getting bound in local optima and ultimately achieving global optima.
@@ -74,28 +77,25 @@ Description-
 Simulated annealing derives a virtual analogy between the process of annealing which is cooling and heating of metal to make it stronger. Similarly, this algorithm uses temperature as a control parameter. Trapping into local optima is avoided by selection of a bad codeword with a probability of e-ΔE/T , which depends on the control parameter T.
 
 Pseudo Code-
-Let length of codeword be n, weight be w, hamming distance d. 
-Energy= ∑_(x,yε C and x≠y)▒〖d(x,y)〗^(-2) 
-Choose code C,  , temperature T
-(Here initial temperature=1000 and temperature lowered in GP with ratio 0.9 and no of energy drops 3-5 for lowering temp.)
-While |C |<M or some terminating condition:      	  			 
-	Until several energy drops or too many iterations
-1.C   ’ <- perturbation(C  )
-2. Let ΔE = energy(C   ’) – energy(C  )
-If ΔE<0
-	Then C   <- C   ’
-Else
-	With probability e-ΔE/T
-		C   <- C   ’
-3. Lower Temperature
+
+	Let length of codeword be n, weight be w, hamming distance d. 
+	Energy= ∑_(x,yε C and x≠y)▒〖d(x,y)〗^(-2) 
+	Choose code C,  , temperature T
+	(Here initial temperature=1000 and temperature lowered in GP with ratio 0.9 and no of energy drops 3-5 for lowering temp.)
+	While |C |<M or some terminating condition:      	  			 
+		Until several energy drops or too many iterations
+	1.C   ’ <- perturbation(C  )
+	2. Let ΔE = energy(C   ’) – energy(C  )
+	If ΔE<0
+		Then C   <- C   ’
+	Else
+		With probability e-ΔE/T
+			C   <- C   ’
+	3. Lower Temperature
 		
 
 Result-
 The implementation of algorithm proved to be unsuccessful. Even using better energy function resulted in negative results.
-
-
-
-
 
 
 	Tabu Search:
