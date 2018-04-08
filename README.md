@@ -104,18 +104,19 @@ Description-
 Tabu Search avoids the trap of local optima by using memory. A list is maintained throughout the execution which contains the taboo codes and are not added to the final solution. The algorithm is an iterative one, it starts with code size 1 for particular n,d,w and keeps on increasing the code size until the optimal code is found out. 
 
 Pseudo Code-
-Let length of codeword be n, weight be w, minimum hamming distance d, code size M. 
-Energy= ∑_(x,yε C,x≠y and d(x,y)<d)▒〖[d-d(x,y)]〗^2   
-Until (higher M can’t produce energy=0) 
-Tabu list=[]
-Choose initial code Ca
-While energy =/=0 or some terminating condition:  
-	Neighbourhood of X is defined as:             
- 
-Where cai refers to ith codeword of Ca
- 
-2. Cb <- minimum energy code in N    (Ca) but not belonging to tabu list
-3. tabu list append(Cb )
+
+	Let length of codeword be n, weight be w, minimum hamming distance d, code size M. 
+	Energy= ∑_(x,yε C,x≠y and d(x,y)<d)▒〖[d-d(x,y)]〗^2   
+	Until (higher M can’t produce energy=0) 
+	Tabu list=[]
+	Choose initial code Ca
+	While energy =/=0 or some terminating condition:  
+		Neighbourhood of X is defined as:             
+
+	Where cai refers to ith codeword of Ca
+
+	2. Cb <- minimum energy code in N    (Ca) but not belonging to tabu list
+	3. tabu list append(Cb )
 		
 
 Result-
