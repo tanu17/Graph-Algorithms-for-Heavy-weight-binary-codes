@@ -1,4 +1,6 @@
-# Heuristic Construction(Informed Search) of Heavy Weight Binary Codes
+# Heuristic Construction of Heavy Weight Binary Codes
+
+A constructive heuristic is a type of heuristic method which starts with an empty solution and repeatedly extends the current solution until a complete solution is obtained. It differs from local search heuristics which start with a complete solution and then try to improve the current solution further via local moves.
 
 A constant weight binary code is a set of binary vectors of length n, with weight at least w and minimum Hamming distance d. We refer to the maximum possible number of codewords  in a heavy weight code as H(n, d, w). 
 
@@ -6,11 +8,11 @@ Heavy weight codes have applications in asynchronous communication problems and 
 
 In this project, we study and experiment with many local search heuristic and determine their effectiveness as the novel methods for finding heavy weight codes with the maximum number of codewords. 
 
-The algorithms studied were- 
-	Greedy Algorithm
-	Hill Climbing Algorithm
-	Simulated Annealing
-	Tabu Search
+	The algorithms studied were- 
+		Greedy Algorithm
+		Hill Climbing Algorithm
+		Simulated Annealing
+		Tabu Search
 Alongside the study for optimizing the search of Heavy Weight binary codes, we got glimpse upon related problems such as Genetic Algorithm, t-Covering Design Problem and for finding constant weight binary codes which helped us in understanding the original problem in depth.
 
 
