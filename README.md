@@ -1,4 +1,4 @@
-# Heuristic Construction of Heavy Weight Binary Codes
+# Heuristic Construction(Informed Search) of Heavy Weight Binary Codes
 
 A constant weight binary code is a set of binary vectors of length n, with weight at least w and minimum Hamming distance d. We refer to the maximum possible number of codewords  in a heavy weight code as H(n, d, w). 
 
@@ -14,7 +14,7 @@ The algorithms studied were-
 Alongside the study for optimizing the search of Heavy Weight binary codes, we got glimpse upon related problems such as Genetic Algorithm, t-Covering Design Problem and for finding constant weight binary codes which helped us in understanding the original problem in depth.
 
 
-Greedy Algorithm:
+# Greedy Algorithm:
 
 Description-
 Greedy algorithm works on the principle of brute force by checking each solution. In this case, if the codeword selected for checking is found to be feasible, it is added to the code. There are two types of greedy search algorithm used- random search and lexicographic search. In lexicographic search, the exploration order is in the alphabetic/numerical order which can in turn be ascending or descending. In random search, there is no exploration order and the probability of codeword being selected is equal for all codewords.
@@ -49,7 +49,7 @@ For random search, the results obtained were better than lexicographic order but
 Example: After several trial the best lower bound obtained from greedy search was 22 for H(10,4,5) which was proved later on in the research to be 37.
 
 
-Hill Climbing Algorithm:
+# Hill Climbing Algorithm:
 
 Description-
 Greedy algorithm works on the principle of brute force by checking each solution. In this case, if the codeword selected for checking is found to be feasible, it is added to the code. There are two types of greedy search algorithm used- random search and lexicographic search. In lexicographic search, the exploration order is in the alphabetic/numerical order which can in turn be ascending or descending. In random search, there is no exploration order and the probability of codeword being selected is equal for all codewords.
@@ -104,7 +104,7 @@ Result-
 The implementation of algorithm proved to be unsuccessful. Even using better energy function resulted in negative results.
 
 
-Tabu Search:
+# Tabu Search:
 
 Description-
 Tabu Search avoids the trap of local optima by using memory. A list is maintained throughout the execution which contains the taboo codes and are not added to the final solution. The algorithm is an iterative one, it starts with code size 1 for particular n,d,w and keeps on increasing the code size until the optimal code is found out. 
